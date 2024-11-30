@@ -23,3 +23,9 @@ keymap.set('v', ':', ';')
 
 -- <ESC>でターミナルモードを抜ける
 keymap.set('t', '<ESC>', '<C-\\><C-n>')
+
+-- Finder系
+local telescope_builtin = require 'telescope.builtin'
+vim.keymap.set('n', '<C-f><C-o>', telescope_builtin.find_files, { desc = '[F]ind [F]iles' })
+vim.keymap.set('n', '<C-f><C-f>', telescope_builtin.live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<C-f><C-b>', telescope_builtin.buffers, { desc = '[ ] Find existing buffers' })
